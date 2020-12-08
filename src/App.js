@@ -119,6 +119,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <SearchDrawer searchDrawer={searchDrawer} dates={dates} setDates={setDates} />
       <Header appName='Data CRIB' />
+      <h2>Welcome to Amazon ECS</h2>
       <Home data={data} searchBar={searchBar} searchDrawer={searchDrawer} />
     </ThemeProvider>
   )
