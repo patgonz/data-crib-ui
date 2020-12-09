@@ -2,6 +2,7 @@ FROM node:alpine as builder
 WORKDIR '/app'
 COPY package.json .
 RUN npm install -g react-scripts
+RUN npm install -g node-sass
 RUN npm install
 COPY ./ ./
 RUN npm run build
