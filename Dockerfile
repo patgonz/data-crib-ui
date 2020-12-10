@@ -10,7 +10,7 @@ RUN npm install -g joi
 RUN npm install -g core-js@3
 RUN npm install -g react-scripts
 RUN npm install -g
-RUN yarn add react
+RUN yarn add react -g
 COPY ./ ./
 RUN npm run build
  
