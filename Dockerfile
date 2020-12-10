@@ -9,7 +9,7 @@ RUN npm install -g @rollup/plugin-babel
 RUN npm install -g joi
 RUN npm install -g core-js@3
 RUN npm install -g react-scripts
-RUN npm install
+RUN npm install -g
 COPY ./ ./
 RUN npm run build
  
