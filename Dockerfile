@@ -2,7 +2,6 @@ FROM node:alpine as builder
 WORKDIR '/app'
 COPY package.json .
 RUN npm install -g node-sass
-RUN npm install -g npm@7.1.1
 RUN npm install -g chokidar@3
 RUN npm install -g @hapi/bourne
 RUN npm install @sideway/address
