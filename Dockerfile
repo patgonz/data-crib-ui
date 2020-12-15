@@ -1,7 +1,7 @@
 FROM node:alpine as builder
 WORKDIR '/app'
 COPY ./ ./
-RUN npm i -g && \
+RUN npm i && \
     npm run build && \
     ls && \
     ls build
