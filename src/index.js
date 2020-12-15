@@ -4,7 +4,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { CssBaseline } from '@material-ui/core';
-import 'fontsource-roboto';
+
+// Styles and fonts
+import 'typeface-roboto';
 
 ReactDOM.render(
   <React.StrictMode>
