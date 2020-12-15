@@ -2,7 +2,6 @@ FROM node:alpine as builder
 WORKDIR '/app'
 COPY ./ ./
 RUN npm i -g \
-    npm i -g react \
     npm run build
 FROM nginx
 EXPOSE 80
