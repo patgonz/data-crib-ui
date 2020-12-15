@@ -56,7 +56,7 @@ const App = () => {
   
   const [data, setData] = useState([]);
   const [dates, setDates] = useState({});
-  const cancelToken = useRef(axios.CancelToken.source());
+  const cancelToken = null; // useRef(axios.CancelToken.source());
   const getIP2Proxy = async () => {
     let queryParams = 'ip2proxy?&_limit=50&_page=1';
     if(search)
@@ -75,8 +75,8 @@ const App = () => {
     console.log(queryParams)
 
     try {
-      const response = await axios.get(`http://localhost:3000/${queryParams}`,
-        { cancelToken: cancelToken.current.token });
+      const response = null; /* await axios.get(`http://localhost:3000/${queryParams}`,
+        { cancelToken: cancelToken.current.token }); */
 
       setData(response.data);
     } catch (error) {
@@ -89,15 +89,15 @@ const App = () => {
     try {
       // const response = await axios.get(`http://localhost:3002/${queryParams}`,
       //   { cancelToken: cancelToken.current.token });
-      const request1 = await axios.get(`http://localhost:3000/${queryParams2}`, { cancelToken: cancelToken.current.token });
-      const response1 = await axios
+      const request1 = null; // await axios.get(`http://localhost:3000/${queryParams2}`, { cancelToken: cancelToken.current.token });
+      const response1 = null; /* await axios
                         .all([request1])
                         .then(axios.spread((...responses) => {
                           const response0 = responses[0];
                           const response1 = responses[1];
                           setData(response1.data);
                           //setData(response1.data);
-                          }));
+                          })); */
 
       //setData(response.data);
     } catch (error) {
