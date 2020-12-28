@@ -17,12 +17,7 @@
         "command": null,
         "linuxParameters": null,
         "cpu": 0,
-        "environment": [
-          {
-              "name": "AKIAQTITIT3VSZKNNNOW",
-              "value": "fYAkCcodiukjM/goVIk93zF2BlsxNgiJ0vAJx98y"
-          }
-      ],
+        "environment": [],
         "resourceRequirements": null,
         "ulimits": null,
         "dnsServers": null,
