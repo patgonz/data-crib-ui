@@ -43,7 +43,7 @@ const Home = (props) => {
     data,
     searchDrawer,
     searchBar,
-    
+
   } = props;
 
   console.log(data);
@@ -54,27 +54,27 @@ const Home = (props) => {
         value={searchBar.search}
         onChange={(newValue) => searchBar.onChange(newValue)}
         onRequestSearch={searchBar.onSubmit} />
-      <div>   
-      
+      <div>
+
         <searchDrawer />
-         
+
         <Tooltip title="Advanced Search" >
-        <IconButton
-          color='inherit'
-          aria-label='open drawer'
-          onClick={searchDrawer.onClick}
-          edge='start'
-          className={clsx(classes.menuButton, classes.hide)}>
-          {/* <MenuIcon /> */}
-          <FilterList />
-        </IconButton>
+          <IconButton
+            color='inherit'
+            aria-label='open drawer'
+            onClick={searchDrawer.onClick}
+            edge='start'
+            className={clsx(classes.menuButton, classes.hide)}>
+            {/* <MenuIcon /> */}
+            <FilterList />
+          </IconButton>
         </Tooltip>
-  {data.length != 0 ? <Typography id='dataSourceTitle' 
-                    component='div' 
-                    variant='h6'>
-                      IP2Proxy Results
+        {data.length != 0 ? <Typography id='dataSourceTitle'
+          component='div'
+          variant='h6'>
+          IP2Proxy Results
         </Typography> : null}
-        
+
         {data.map((item) => (
 
           <IP2ProxyPane

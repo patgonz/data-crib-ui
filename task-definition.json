@@ -29,7 +29,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "041379471083.dkr.ecr.us-east-1.amazonaws.com/data-crib-ui",
+        "image": "131074564070.dkr.ecr.us-east-2.amazonaws.com/data-crib-repository",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -46,7 +46,7 @@
         "dockerLabels": null,
         "systemControls": null,
         "privileged": null,
-        "name": "ReactAppContainer"
+        "name": "data-crib-ui"
       }
     ],
     "placementConstraints": [],

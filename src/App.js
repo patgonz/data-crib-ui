@@ -53,30 +53,31 @@ const App = () => {
     console.log(value);
     setSearch(value);
   }, [setSearch]);
-  
+
   const [data, setData] = useState([]);
   const [dates, setDates] = useState({});
-  const cancelToken = null; // useRef(axios.CancelToken.source());
+  const cancelToken = useRef(axios.CancelToken.source());
   const getIP2Proxy = async () => {
     let queryParams = 'ip2proxy?&_limit=50&_page=1';
-    if(search)
-      queryParams += '&ip_address=' + search
+    if (search) {
+      queryParams += '&ip_address=' + search;
+    }
 
-    if(dates.start)
-    {
+    if (dates.start) {
       queryParams += '&writetime_gte=' + moment(dates.start).format('YYYY-MM-DD');
     }
 
-    if(dates.end)
-    {
+    if (dates.end) {
       queryParams += '&writetime_lte=' + moment(dates.end).format('YYYY-MM-DD');
     }
 
-    console.log(queryParams)
+    console.log(queryParams);
 
     try {
-      const response = null; /* await axios.get(`http://localhost:3000/${queryParams}`,
-        { cancelToken: cancelToken.current.token }); */
+      const response = await axios.get(
+        `http://${process.env.REACT_APP_BACKEND_SERVER}:${process.env.REACT_APP_BACKEND_SERVER_PORT}/${queryParams}`,
+        { cancelToken: cancelToken.current.token }
+      );
 
       setData(response.data);
     } catch (error) {
@@ -85,10 +86,10 @@ const App = () => {
   };
 
   const getFirehol = async () => {
-    let queryParams2 = 'firehol?ip_address=' + search + '&_limit=50&_page=1';
+    let queryParams = 'firehol?ip_address=' + search + '&_limit=50&_page=1';
     try {
-      // const response = await axios.get(`http://localhost:3002/${queryParams}`,
-      //   { cancelToken: cancelToken.current.token });
+      const response = await axios.get(`http://${process.env.REACT_APP_BACKEND_SERVER}:${process.env.REACT_APP_BACKEND_SERVER_PORT}/${queryParams}`,
+        { cancelToken: cancelToken.current.token });
       const request1 = null; // await axios.get(`http://localhost:3000/${queryParams2}`, { cancelToken: cancelToken.current.token });
       const response1 = null; /* await axios
                         .all([request1])
@@ -107,7 +108,7 @@ const App = () => {
 
   let searchBar = {
     onChange: handleSearch,
-    onSubmit: getIP2Proxy,
+    onSubmit: (process.env.NODE_ENV == 'development' ? getIP2Proxy : () => null),
     search: search,
   };
   let searchDrawer = {
